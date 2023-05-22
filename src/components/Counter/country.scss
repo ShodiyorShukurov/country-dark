@@ -1,6 +1,6 @@
 .country-section {
   padding-top: 48px;
-  background-color: var(--main-bg-color);
+
   &__form {
     display: flex;
     justify-content: space-between;
@@ -9,7 +9,6 @@
   &__form--input {
     padding: 18px 270px 18px 32px;
     margin: 0;
-    background-color: var(--header-bg-color);
     border: none;
     outline: none;
     box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
@@ -17,27 +16,28 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: var(-main-text-color);
+    
 
-    &::before {
-      content: "";
-      width: 18px;
-      height: 18px;
-      padding-right: 24px;
-      background-image: url("../../assets/images/logo/search.svg");
-      background-repeat: no-repeat;
-      background-position: left center;
-    }
+    // &::before {
+    //   content: "";
+    //   width: 18px;
+    //   height: 18px;
+    //   padding-right: 24px;
+    //   background-image: url("../../assets/images/logo/search.svg");
+    //   background-repeat: no-repeat;
+    //   background-position: left center;
+    // }
   }
 
   &__form--select {
     padding: 18px 77px 18px 24px;
+    box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
     border: none;
     outline: none;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    color: var(-main-text-color);
+    
   }
   &__wrapper {
     padding-top: 48px;
@@ -51,7 +51,6 @@
   &__wrapper--item {
     height: 100%;
     min-height: 375px;
-    background-color: var(--header-bg-color);
     margin-bottom: 20px;
   }
   &__wrapper--img {
@@ -71,7 +70,7 @@
     font-weight: 800;
     font-size: 18px;
     line-height: 16px;
-    color: var(-main-text-color);
+    background-color:none;
   }
   &__wrapper--text {
     margin-top: 0;
@@ -79,6 +78,6 @@
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: var(-main-text-color);
+    background-color: none;
   }
 }

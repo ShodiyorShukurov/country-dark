@@ -1,22 +1,26 @@
 import PropTypes from "prop-types";
+import { Context as ThemeContext } from "../../context/ThemeContext";
+import { useContext } from "react";
 
 const Card = ({ key, li, img, div, h2, p, src, title, pop, reg, cap}) => {
-  console.log(key)
+
+  const {theme}= useContext(ThemeContext)
+
   return (
-    <li className={li} key={key}>
-      <img className={img} src={src} width={270} height={160} alt="" />
+    <li className={` header--${theme} ${li}`} key={key}>
+      <img className={img} src={src} alt={h2} />
       <div className={div}>
-        <h2 className={h2}>{title}</h2>
-        <p className={p}>Population: {pop}</p>
-        <p className={p}>Region: {reg}</p>
-        <p className={p}>Capital: {cap}</p> 
+        <h2 className={` main__text-${theme} ${h2}`}>{title}</h2>
+        <p className={`${p} main__text-${theme}`}>Population: {pop}</p>
+        <p className={`${p} main__text-${theme}`}>Region: {reg}</p>
+        <p className={`${p} main__text-${theme}`}>Capital: {cap}</p> 
       </div>
     </li>
   );
 };
 
 Card.propTypes = {
-  key: PropTypes.string,
+  key: PropTypes.object,
   li: PropTypes.string,
   img: PropTypes.string,
   div: PropTypes.string,
