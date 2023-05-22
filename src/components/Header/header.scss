@@ -14,11 +14,10 @@
     font-size: 24px;
     line-height: 33px;
   }
-  
+
   &__wrapper--end {
     content: "";
     padding-left: 15px;
-    background-image: url("../../assets/images/logo/Path.svg");
     background-repeat: no-repeat;
     background-position: left center;
   }
@@ -33,4 +32,10 @@
   }
 }
 
+.wrapper--dark {
+  background-image: url('../../assets//images/logo/moon-white.svg');
+}
 
+.wrapper--light{
+  background-image: url("../../assets/images/logo/Path.svg");
+}

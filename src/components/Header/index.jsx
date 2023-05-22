@@ -22,7 +22,7 @@ const Header = () => {
               Where in the world?
             </a>
           </div>
-          <div className="site-header__wrapper--end">
+          <div className={`site-header__wrapper--end wrapper--${theme}`}>
             <button
               className={`site-header__wrapper--btn header--${theme}`}
               onClick={() => toggleTheme()}
