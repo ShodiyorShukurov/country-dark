@@ -8,10 +8,11 @@ const Country = () => {
   const { theme } = React.useContext(ThemeContext);
 
   const [country, setCountry] = React.useState([]);
+  const [searchTitle, setSearchTitle] = React.useState("");
 
   React.useEffect(() => {
     api
-      .get("all")
+      .get("all" || '')
       .then((res) => setCountry(res.data))
       .catch((err) => console.log(err.message));
   }, []);
@@ -25,9 +26,10 @@ const Country = () => {
             type="search"
             name="country_name"
             placeholder="Search for a country…"
+            onChange={(evt) => setSearchTitle(evt.target.value)}
           />
           <select className={`country-section__form--select header--${theme}`}>
-            <option disabled>Filter by Region</option>
+            <option value="All">All Regions</option>
             <option value="Africa">Africa</option>
             <option value="Americas">Americas</option>
             <option value="Asia">Asia</option>
@@ -38,21 +40,33 @@ const Country = () => {
         <div className="country-section__wrapper">
           <ul className="country-section__wrapper--list">
             {country.length > 0 &&
-              country.slice(0,12).map((item) => (
-                <Card
-                  key={item.name.common}
-                  src={item.flags.png}
-                  title={item.name.common}
-                  pop={item.population}
-                  reg={item.region}
-                  cap={item.capital}
-                  li="country-section__wrapper--item"
-                  img="country-section__wrapper--img"
-                  div="country-section__wrapper--desc"
-                  h2="country-section__wrapper--title"
-                  p="country-section__wrapper--text"
-                />
-              ))}
+              country
+                .filter((value) => {
+                  if (searchTitle === "") {
+                    return value;
+                  } else if (
+                    value.name.common
+                      .toLowerCase()
+                      .includes(searchTitle.toLowerCase())
+                  ) {
+                    return value;
+                  }
+                })
+                .map((item) => (
+                  <Card
+                    key={item.name.common}
+                    src={item.flags.png}
+                    title={item.name.common}
+                    pop={item.population}
+                    reg={item.region}
+                    cap={item.capital}
+                    li="country-section__wrapper--item"
+                    img="country-section__wrapper--img"
+                    div="country-section__wrapper--desc"
+                    h2="country-section__wrapper--title"
+                    p="country-section__wrapper--text"
+                  />
+                ))}
           </ul>
         </div>
       </div>

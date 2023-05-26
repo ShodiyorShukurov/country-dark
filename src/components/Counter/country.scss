@@ -1,13 +1,17 @@
 .country-section {
   padding-top: 48px;
+  min-height: 100vh;
 
   &__form {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
   &__form--input {
-    padding: 18px 270px 18px 32px;
+    width: 100%;
+    max-width: 480px;
+    padding: 18px 27px 18px 32px;
     margin: 0;
     border: none;
     outline: none;
@@ -16,17 +20,6 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
-    
-
-    // &::before {
-    //   content: "";
-    //   width: 18px;
-    //   height: 18px;
-    //   padding-right: 24px;
-    //   background-image: url("../../assets/images/logo/search.svg");
-    //   background-repeat: no-repeat;
-    //   background-position: left center;
-    // }
   }
 
   &__form--select {
@@ -52,6 +45,7 @@
     height: 100%;
     min-height: 375px;
     margin-bottom: 20px;
+    cursor: pointer;
   }
   &__wrapper--img {
     width: 270px;
