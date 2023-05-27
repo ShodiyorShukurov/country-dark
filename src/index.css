@@ -137,7 +137,7 @@ a {
 .main__text-dark {
   color: var(--main-dark-text-color);
 }
-.main--dark{
+.main--dark {
   background-color: var(--main-dark-bg-color);
 }
 .main--light {
@@ -145,4 +145,12 @@ a {
 }
 .main__text-light {
   color: var(--main-text-color);
+}
+.btn--light {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+.btn--dark {
+  background-color: var(--main-dark-bg-color);
+  color: var(--main-dark-text-color);
 }

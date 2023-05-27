@@ -2,9 +2,8 @@ import PropTypes from "prop-types";
 import { Context as ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
 
-const Card = ({ key, li, img, div, h2, p, src, title, pop, reg, cap}) => {
-
-  const {theme}= useContext(ThemeContext)
+const Card = ({ key, li, img, div, h2, p, src, title, pop, reg, cap }) => {
+  const { theme } = useContext(ThemeContext);
 
   return (
     <li className={` header--${theme} ${li}`} key={key}>
@@ -13,8 +12,11 @@ const Card = ({ key, li, img, div, h2, p, src, title, pop, reg, cap}) => {
         <h2 className={` main__text-${theme} ${h2}`}>{title}</h2>
         <p className={`${p} main__text-${theme}`}>Population: {pop}</p>
         <p className={`${p} main__text-${theme}`}>Region: {reg}</p>
-        <p className={`${p} main__text-${theme}`}>Capital: {cap}</p> 
-      </div>
+        <p className={`${p} main__text-${theme}`}>Capital: {cap}</p>
+
+        </div>
+        <button className={`country-section__wrapper--btn  btn--${theme}`}>More</button>
+          
     </li>
   );
 };

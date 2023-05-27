@@ -4,14 +4,6 @@ import { Context as ThemeContext } from "../../context/ThemeContext";
 
 const Header = () => {
   const { theme, toggleTheme } = React.useContext(ThemeContext);
-  // const [theme, setTheme] = React.useState(
-  //   localStorage.getItem("theme") || "light"
-  // );
-
-  // const toggleTheme = () => {
-  //   localStorage.setItem("theme", theme === "light" ? "dark" : "light");
-  //   setTheme(theme == "light" ? "dark" : "light");
-  // };
 
   return (
     <header className={`site-header header--${theme}`}>
