@@ -11,7 +11,7 @@ const Root = () => {
       <Routes>
       <Route path="/home" element={<CountryPages />} />
         <Route path ='/' element={<Navigate to='/home'/>} />
-        <Route path="/about" element={<AboutPages />} />
+        <Route path="/about/:common" element={<AboutPages />} />
         <Route path ='*' element={<NotFound />} />
       </Routes>
     </>

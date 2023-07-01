@@ -1,21 +1,13 @@
 import Card from "../Card";
 import React from "react";
-import api from "../../Api/api";
 import "./country.scss";
 import { Context as ThemeContext } from "../../context/ThemeContext";
+import { Context as CountryContext } from "../../context/Country";
 
 const Country = () => {
   const { theme } = React.useContext(ThemeContext);
-
-  const [country, setCountry] = React.useState([]);
-  const [searchTitle, setSearchTitle] = React.useState("");
-
-  React.useEffect(() => {
-    api
-      .get("all" || '')
-      .then((res) => setCountry(res.data))
-      .catch((err) => console.log(err.message));
-  }, []);
+  const { country, searchTitle, setSearchTitle } =
+    React.useContext(CountryContext);
 
   return (
     <section className={`country-section main--${theme}`}>
@@ -55,6 +47,7 @@ const Country = () => {
                 .map((item) => (
                   <Card
                     key={item.name.common}
+                    common={item.name.common}
                     src={item.flags.png}
                     title={item.name.common}
                     pop={item.population}

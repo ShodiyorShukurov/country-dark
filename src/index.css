@@ -1,59 +1,44 @@
-/* nunito-sans-regular - latin */
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("./assets/fonts/nunito-sans-v15-latin-regular.eot"); /* IE9 Compat Modes */
+  src: url("./assets/fonts/nunito-sans-v15-latin-regular.eot");
   src: url("./assets/fonts/nunito-sans-v15-latin-regular.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("./assets/fonts/nunito-sans-v15-latin-regular.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("./assets/fonts/nunito-sans-v15-latin-regular.woff") format("woff"),
-    /* Modern Browsers */
-      url("./assets/fonts/nunito-sans-v15-latin-regular.ttf") format("truetype"),
-    /* Safari, Android, iOS */
-      url("./assets/fonts/nunito-sans-v15-latin-regular.svg#NunitoSans")
-      format("svg"); /* Legacy iOS */
+    url("./assets/fonts/nunito-sans-v15-latin-regular.woff2") format("woff2"),
+    url("./assets/fonts/nunito-sans-v15-latin-regular.woff") format("woff"),
+    url("./assets/fonts/nunito-sans-v15-latin-regular.ttf") format("truetype"),
+    url("./assets/fonts/nunito-sans-v15-latin-regular.svg#NunitoSans")
+      format("svg");
 }
-/* nunito-sans-600 - latin */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 600;
-  src: url("./assets/fonts/nunito-sans-v15-latin-600.eot"); /* IE9 Compat Modes */
+  src: url("./assets/fonts/nunito-sans-v15-latin-600.eot");
   src: url("./assets/fonts/nunito-sans-v15-latin-600.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("./assets/fonts/nunito-sans-v15-latin-600.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("./assets/fonts/nunito-sans-v15-latin-600.woff") format("woff"),
-    /* Modern Browsers */ url("./assets/fonts/nunito-sans-v15-latin-600.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("./assets/fonts/nunito-sans-v15-latin-600.svg#NunitoSans")
-      format("svg"); /* Legacy iOS */
+    url("./assets/fonts/nunito-sans-v15-latin-600.woff2") format("woff2"),
+    url("./assets/fonts/nunito-sans-v15-latin-600.woff") format("woff"),
+    url("./assets/fonts/nunito-sans-v15-latin-600.ttf") format("truetype"),
+    url("./assets/fonts/nunito-sans-v15-latin-600.svg#NunitoSans") format("svg");
 }
-/* nunito-sans-800 - latin */
+
 @font-face {
-  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-display: swap;
   font-family: "Nunito Sans";
   font-style: normal;
   font-weight: 800;
-  src: url("./assets/fonts/nunito-sans-v15-latin-800.eot"); /* IE9 Compat Modes */
+  src: url("./assets/fonts/nunito-sans-v15-latin-800.eot");
   src: url("./assets/fonts/nunito-sans-v15-latin-800.eot?#iefix")
       format("embedded-opentype"),
-    /* IE6-IE8 */ url("./assets/fonts/nunito-sans-v15-latin-800.woff2")
-      format("woff2"),
-    /* Super Modern Browsers */
-      url("./assets/fonts/nunito-sans-v15-latin-800.woff") format("woff"),
-    /* Modern Browsers */ url("./assets/fonts/nunito-sans-v15-latin-800.ttf")
-      format("truetype"),
-    /* Safari, Android, iOS */
-      url("./assets/fonts/nunito-sans-v15-latin-800.svg#NunitoSans")
-      format("svg"); /* Legacy iOS */
+    url("./assets/fonts/nunito-sans-v15-latin-800.woff2") format("woff2"),
+    url("./assets/fonts/nunito-sans-v15-latin-800.woff") format("woff"),
+    url("./assets/fonts/nunito-sans-v15-latin-800.ttf") format("truetype"),
+    url("./assets/fonts/nunito-sans-v15-latin-800.svg#NunitoSans") format("svg");
 }
 
 /* ROOT */
@@ -126,31 +111,43 @@ ul {
 a {
   text-decoration: none;
 }
+
 .header--dark {
   background-color: var(--header-dark-bg-color);
   color: var(--main-dark-text-color);
 }
+
 .header--light {
   background-color: var(--header-bg-color);
   color: var(--main-text-color);
 }
-.main__text-dark {
-  color: var(--main-dark-text-color);
-}
+
 .main--dark {
   background-color: var(--main-dark-bg-color);
 }
+
 .main--light {
   background-color: var(--main-bg-color);
 }
+
+.main__text-dark {
+  color: var(--main-dark-text-color);
+}
+
 .main__text-light {
   color: var(--main-text-color);
 }
+
 .btn--light {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
+
 .btn--dark {
   background-color: var(--main-dark-bg-color);
   color: var(--main-dark-text-color);
+}
+
+.danger{
+  background-color:red;
 }

@@ -1,8 +1,22 @@
 import PropTypes from "prop-types";
 import { Context as ThemeContext } from "../../context/ThemeContext";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
-const Card = ({ key, li, img, div, h2, p, src, title, pop, reg, cap }) => {
+const Card = ({
+  key,
+  li,
+  img,
+  div,
+  h2,
+  p,
+  src,
+  title,
+  pop,
+  reg,
+  cap,
+  common,
+}) => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -10,13 +24,22 @@ const Card = ({ key, li, img, div, h2, p, src, title, pop, reg, cap }) => {
       <img className={img} src={src} alt={h2} />
       <div className={div}>
         <h2 className={` main__text-${theme} ${h2}`}>{title}</h2>
-        <p className={`${p} main__text-${theme}`}>Population: {pop}</p>
-        <p className={`${p} main__text-${theme}`}>Region: {reg}</p>
-        <p className={`${p} main__text-${theme}`}>Capital: {cap}</p>
-
-        </div>
-        <button className={`country-section__wrapper--btn  btn--${theme}`}>More</button>
-          
+        <p className={`${p} main__text-${theme}`}>
+          <strong> Population:</strong> {pop}
+        </p>
+        <p className={`${p} main__text-${theme}`}>
+          <strong> Region:</strong> {reg}
+        </p>
+        <p className={`${p} main__text-${theme}`}>
+          <strong> Capital:</strong> {cap || 'Not available'}
+        </p>
+      </div>
+      <Link
+        to={"/about/" + common}
+        className={`country-section__wrapper--btn  btn--${theme}`}
+      >
+        More
+      </Link>
     </li>
   );
 };
@@ -33,5 +56,6 @@ Card.propTypes = {
   pop: PropTypes.number,
   reg: PropTypes.string,
   cap: PropTypes.array,
+  common: PropTypes.string,
 };
 export default Card;
