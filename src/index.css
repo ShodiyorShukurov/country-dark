@@ -117,8 +117,16 @@ a {
   color: var(--main-dark-text-color);
 }
 
+.header--dark:hover{
+  color: var(--main-dark-text-color);
+}
+
 .header--light {
   background-color: var(--header-bg-color);
+  color: var(--main-text-color);
+}
+
+.header--light:hover{
   color: var(--main-text-color);
 }
 
@@ -134,7 +142,15 @@ a {
   color: var(--main-dark-text-color);
 }
 
+.main__text-dark:hover {
+  color: var(--main-dark-text-color);
+}
+
 .main__text-light {
+  color: var(--main-text-color);
+}
+
+.main__text-light:hover {
   color: var(--main-text-color);
 }
 
@@ -143,8 +159,16 @@ a {
   color: var(--main-text-color);
 }
 
+.btn--light:hover {
+  color: var(--main-text-color);
+}
+
 .btn--dark {
   background-color: var(--main-dark-bg-color);
+  color: var(--main-dark-text-color);
+}
+
+.btn--dark:hover {
   color: var(--main-dark-text-color);
 }
 

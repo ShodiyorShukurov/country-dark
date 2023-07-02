@@ -10,15 +10,12 @@ const About = () => {
   const { common } = useParams();
   const [desc, setDesc] = React.useState([]);
 
-  console.log(common);
-
   React.useEffect(() => {
     api
       .get("name/" + common)
       .then((res) => setDesc(res.data))
       .catch((err) => console.log(err));
   }, []);
-  console.log(desc);
 
   return (
     <>
@@ -33,8 +30,8 @@ const About = () => {
             </div>
 
             {desc.length > 0 &&
-              desc.map((about) => (
-                <div className="about-section__wrapper-end" key={about.common}>
+              desc.map((about, index) => (
+                <div className="about-section__wrapper-end" key={index}>
                   <div className="about-section__wrapper-flags">
                     <img
                       src={about.flags.png}

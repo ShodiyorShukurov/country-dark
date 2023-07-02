@@ -4,7 +4,6 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 const Card = ({
-  key,
   li,
   img,
   div,
@@ -18,9 +17,10 @@ const Card = ({
   common,
 }) => {
   const { theme } = useContext(ThemeContext);
+  
 
   return (
-    <li className={` header--${theme} ${li}`} key={key}>
+    <li className={` header--${theme} ${li}`} key={common}>
       <img className={img} src={src} alt={h2} />
       <div className={div}>
         <h2 className={` main__text-${theme} ${h2}`}>{title}</h2>
@@ -45,7 +45,7 @@ const Card = ({
 };
 
 Card.propTypes = {
-  key: PropTypes.object,
+  
   li: PropTypes.string,
   img: PropTypes.string,
   div: PropTypes.string,

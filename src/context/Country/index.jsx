@@ -22,7 +22,7 @@ const Provider = ({ children }) => {
 };
 
 Provider.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.node,
 };
 
 export { Context, Provider };
