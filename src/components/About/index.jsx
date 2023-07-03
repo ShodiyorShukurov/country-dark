@@ -9,14 +9,14 @@ const About = () => {
   const { theme } = React.useContext(ThemeContext);
 
   const { common } = useParams();
-    const [desc, setDesc] = React.useState([]);
-  
-    React.useEffect(() => {
-      api
-        .get("name/" + common)
-        .then((res) => setDesc(res.data))
-        .catch((err) => console.log(err));
-    }, []);
+  const [desc, setDesc] = React.useState([]);
+
+  React.useEffect(() => {
+    api
+      .get("name/" + common)
+      .then((res) => setDesc(res.data))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <>
@@ -81,7 +81,13 @@ const About = () => {
                             className={`about-section__text main__text-${theme}`}
                           >
                             <strong>Sub Region:</strong>{" "}
-                            {about.subregion || "Sub region does not exist"}
+                            {about.subregion ? (
+                              about.subregion
+                            ) : (
+                              <span className="text-danger">
+                                Sub region does not exist
+                              </span>
+                            )}
                           </p>
                         </li>
                         <li className="about-section__item">
@@ -89,7 +95,13 @@ const About = () => {
                             className={`about-section__text main__text-${theme}`}
                           >
                             <strong>Capital:</strong>{" "}
-                            {about.capital || "Capital is not available"}
+                            {about.capital ? (
+                              about.capital
+                            ) : (
+                              <span className="text-danger">
+                                Capital is not available
+                              </span>
+                            )}
                           </p>
                         </li>
                       </div>
@@ -120,16 +132,15 @@ const About = () => {
                             className={`about-section__text main__text-${theme}`}
                           >
                             <strong>Language: </strong>
-                            {about.languages &&
+                            {about.languages && about.languages.length > 0 ? (
                               Object.values(about.languages).map(
-                                (language) =>
-                                  language + ", " ||
-                                  `${(
-                                    <span className="text-danger">
-                                      The language is not available
-                                    </span>
-                                  )}`
-                              )}
+                                (language) => ({ language })
+                              )
+                            ) : (
+                              <span className="text-danger">
+                                The language is not available
+                              </span>
+                            )}
                           </p>
                         </li>
                       </div>
