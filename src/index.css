@@ -117,12 +117,21 @@ a {
   color: var(--main-dark-text-color);
 }
 
+
+.header--dark::placeholder {
+  color: var(--main-dark-text-color);
+}
+
 .header--dark:hover{
   color: var(--main-dark-text-color);
 }
 
 .header--light {
   background-color: var(--header-bg-color);
+  color: var(--main-text-color);
+}
+
+.header--light::placeholder {
   color: var(--main-text-color);
 }
 

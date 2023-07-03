@@ -8,13 +8,14 @@
     padding-top: 23px;
     padding-bottom: 23px;
   }
+
   &__wrapper--link {
     margin: 0;
     font-weight: 800;
     font-size: 24px;
     line-height: 33px;
 
-    &:hover{
+    &:hover {
       outline: none;
     }
   }
@@ -37,9 +38,28 @@
 }
 
 .wrapper--dark {
-  background-image: url('../../assets//images/logo/moon-white.svg');
+  background-image: url("../../assets//images/logo/moon-white.svg");
 }
 
-.wrapper--light{
+.wrapper--light {
   background-image: url("../../assets/images/logo/Path.svg");
+}
+
+@media only screen and (max-width: 400px) {
+  .site-header {
+
+    &__wrapper{
+      padding: 30px  0;
+    }
+
+    &__wrapper--link {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__wrapper--btn {
+      font-size: 12px;
+      line-height: normal;
+    }
+  }
 }

@@ -7,15 +7,16 @@ import { Context as ThemeContext } from "../../context/ThemeContext";
 
 const About = () => {
   const { theme } = React.useContext(ThemeContext);
-  const { common } = useParams();
-  const [desc, setDesc] = React.useState([]);
 
-  React.useEffect(() => {
-    api
-      .get("name/" + common)
-      .then((res) => setDesc(res.data))
-      .catch((err) => console.log(err));
-  }, []);
+  const { common } = useParams();
+    const [desc, setDesc] = React.useState([]);
+  
+    React.useEffect(() => {
+      api
+        .get("name/" + common)
+        .then((res) => setDesc(res.data))
+        .catch((err) => console.log(err));
+    }, []);
 
   return (
     <>
@@ -34,6 +35,7 @@ const About = () => {
                 <div className="about-section__wrapper-end" key={index}>
                   <div className="about-section__wrapper-flags">
                     <img
+                      className="about-section__wrapper--flags-img"
                       src={about.flags.png}
                       alt={about.flags.alt || "undefined"}
                       width={560}
@@ -45,7 +47,7 @@ const About = () => {
                       {common}
                     </h2>
                     <ul className="about-section__list">
-                      <div>
+                      <div className="first">
                         <li className="about-section__item">
                           <p
                             className={`about-section__text main__text-${theme}`}
@@ -86,12 +88,12 @@ const About = () => {
                           <p
                             className={`about-section__text main__text-${theme}`}
                           >
-                            <strong>Capital:</strong>
+                            <strong>Capital:</strong>{" "}
                             {about.capital || "Capital is not available"}
                           </p>
                         </li>
                       </div>
-                      <div>
+                      <div className="second">
                         <li className="about-section__item">
                           <p
                             className={`about-section__text main__text-${theme}`}
@@ -132,7 +134,7 @@ const About = () => {
                         </li>
                       </div>
                     </ul>
-                    <div className="d-flex flex-wrap align-items-center">
+                    <div className=" borders-country">
                       <h3
                         className={`about-section__border-country main__text-${theme}`}
                       >
@@ -141,7 +143,7 @@ const About = () => {
                       {about.borders && about.borders.length > 0 ? (
                         about.borders.map((borders) => (
                           <p
-                            className={`about-section__btn header--${theme} mx-4`}
+                            className={`about-section__btn header--${theme} mx-2`}
                             key={borders}
                           >
                             {borders}
@@ -152,6 +154,29 @@ const About = () => {
                           There are no bordering countries
                         </span>
                       )}
+                    </div>
+                    <div className="borders">
+                      <h3
+                        className={`about-section__border-country main__text-${theme}`}
+                      >
+                        Border Countries:
+                      </h3>
+                      <div className="d-flex flex-wrap">
+                        {about.borders && about.borders.length > 0 ? (
+                          about.borders.map((borders) => (
+                            <p
+                              className={`about-section__btn country header--${theme}`}
+                              key={borders}
+                            >
+                              {borders}
+                            </p>
+                          ))
+                        ) : (
+                          <span className="text-danger">
+                            There are no bordering countries
+                          </span>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>

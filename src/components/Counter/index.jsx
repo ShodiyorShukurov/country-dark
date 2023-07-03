@@ -13,11 +13,7 @@ const Country = () => {
   const [countriesPerPage] = React.useState(12);
 
   const lastCountryIndex = currentPage * countriesPerPage;
-  // console.log(lastCountryIndex)
-  // console.log(countriesPerPage)
-  // console.log(currentPage);
   const firstCountryIndex = lastCountryIndex - countriesPerPage;
-  // console.log(firstCountryIndex)
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 

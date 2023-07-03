@@ -1,9 +1,7 @@
 .about-section {
-
- min-height: 100vh;
+  min-height: 100vh;
   padding-bottom: 94px;
 
- 
   &__wrapper-start {
     padding: 80px 0;
   }
@@ -14,7 +12,6 @@
     justify-content: center;
     padding: 10px 39px 10px 32px;
     border: none;
-    cursor: pointer;
     border-radius: 6px;
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.29);
     font-size: 16px;
@@ -32,11 +29,20 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
+    flex-wrap: wrap;
     padding-bottom: 80px;
   }
 
   &__wrapper-aboutes {
-    width: 598px;
+    width: 100%;
+    max-width: 598px;
+  }
+
+  &__wrapper--flags-img {
+    width: 100%;
+    height: 100%;
+    width: 560px;
+    height: 280px;
   }
 
   &__list {
@@ -44,7 +50,7 @@
     justify-content: space-between;
   }
 
-  &__item{
+  &__item {
     margin-right: 10px;
   }
 
@@ -62,10 +68,112 @@
     line-height: 32px;
   }
 
+  .borders-country {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .borders {
+    display: none;
+  }
+
   &__border-country {
     margin: 0;
     font-size: 16px;
     font-weight: 800;
     line-height: 24px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .about-section{
+
+    &__wrapper-end{
+      justify-content: center;
+    }
+
+    &__wrapper-aboutes{
+      max-width: 560px;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .about-section {
+    &__wrapper-start {
+      padding-top: 40px;
+      padding-bottom: 64px;
+    }
+
+    &__btn {
+      max-width: 104px;
+      padding: 6px 23px 6px 24px;
+      border-radius: 2px;
+      font-size: 14px;
+    }
+
+    &__btn svg {
+      font-size: 18px;
+      margin-right: 8px;
+    }
+
+    &__wrapper-end {
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__wrapper--flags-img {
+      width: 100%;
+      height: 100%;
+      max-width: 320px;
+      max-height: 275px;
+      border-radius: 5px;
+    }
+
+    &__wrapper-aboutes {
+      width: 320px;
+    }
+
+    &__list {
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .first {
+      margin-bottom: 32px;
+    }
+
+    &__title {
+      margin-top: 25px;
+      margin-bottom: 16px;
+      font-size: 22px;
+      line-height: normal;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 32px;
+    }
+
+    .second {
+      margin-bottom: 32px;
+    }
+
+    .borders-country {
+      display: none;
+    }
+
+    .borders {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .country {
+      border-radius: 2px;
+      width: 96px;
+      margin-right: 10px;
+      margin-top: 16px;
+    }
   }
 }
