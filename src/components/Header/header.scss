@@ -1,10 +1,17 @@
 .site-header {
-  box-shadow: 0px 2px 4px #0000000e;
+  -webkit-box-shadow: 0px 2px 4px #0000000e;
+          box-shadow: 0px 2px 4px #0000000e;
 
   &__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     padding-top: 23px;
     padding-bottom: 23px;
   }

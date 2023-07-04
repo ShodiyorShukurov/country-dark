@@ -128,20 +128,18 @@ const About = () => {
                           </p>
                         </li>
                         <li className="about-section__item">
-                          <p
-                            className={`about-section__text main__text-${theme}`}
-                          >
-                            <strong>Language: </strong>
-                            {about.languages && about.languages.length > 0 ? (
-                              Object.values(about.languages).map(
-                                (language) => ({ language })
-                              )
-                            ) : (
-                              <span className="text-danger">
-                                The language is not available
-                              </span>
-                            )}
-                          </p>
+                        {about.languages &&
+                          Object.values(about.languages).map((language, index) => (
+                            <p
+                              className={`about-section__text main__text-${theme}`}
+                              key={index}
+                            >
+                              <strong>Language: </strong>
+                              {language}
+                            </p>
+                          ))
+                        }
+                        
                         </li>
                       </div>
                     </ul>
